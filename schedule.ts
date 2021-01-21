@@ -54,10 +54,6 @@ const testEnv = {
 	firmwareCIDeviceId: getRequiredInput('firmware ci device id'),
 }
 
-console.log({
-	testEnv,
-})
-
 const testEnvSDKConfig = {
 	region: testEnv.region,
 	credentials: {
