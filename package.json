@@ -21,7 +21,7 @@
     "NordicSemiconductor"
   ],
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
-  "license": "BSD-5-Clause-Nordic",
+  "license": "BSD-3-Clause",
   "dependencies": {
     "@actions/core": "1.2.6",
     "@aws-sdk/client-cloudformation": "3.3.0",
