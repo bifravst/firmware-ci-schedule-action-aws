@@ -1,0 +1,85 @@
+{
+  "name": "@bifravst/firmware-ci-schedule-action-aws",
+  "version": "0.0.0-development",
+  "description": "GitHub action that schedules a CI run on Firmware CI Runner for AWS",
+  "scripts": {
+    "build": "npx ncc build schedule.ts -o build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bifravst/firmware-ci-schedule-action-aws.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bifravst/firmware-ci-schedule-action-aws/issues"
+  },
+  "homepage": "https://bifravst.github.io/",
+  "keywords": [
+    "Cloud",
+    "IoT",
+    "bifravst",
+    "Asset Tracker",
+    "NordicSemiconductor"
+  ],
+  "author": "Nordic Semiconductor ASA | nordicsemi.no",
+  "license": "BSD-5-Clause-Nordic",
+  "dependencies": {
+    "@actions/core": "1.2.6",
+    "@aws-sdk/client-cloudformation": "3.3.0",
+    "@aws-sdk/client-iot-data-plane": "3.3.0",
+    "@aws-sdk/client-s3": "3.3.0",
+    "@aws-sdk/client-sts": "3.3.0",
+    "@aws-sdk/protocol-http": "3.3.0",
+    "@bifravst/aws": "20.2.2",
+    "@bifravst/cloudformation-helpers": "5.0.1",
+    "@bifravst/e2e-bdd-test-runner": "5.0.18",
+    "@bifravst/firmware-ci-runner-aws": "2.1.12",
+    "@bifravst/random-words": "4.2.1",
+    "node-fetch": "2.6.1",
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "@bifravst/code-style": "8.0.134",
+    "@types/node": "14.14.22",
+    "@types/node-fetch": "2.5.8",
+    "@types/uuid": "8.3.0",
+    "@vercel/ncc": "0.27.0",
+    "eslint": "7.18.0",
+    "lint-staged": "10.5.3",
+    "prettier": "2.2.1",
+    "typescript": "4.1.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run build && git add -A build && lint-staged && npx jest --onlyChanged"
+    }
+  },
+  "lint-staged": {
+    "*.{md,json,yaml,yml}": [
+      "prettier --write"
+    ],
+    "*.ts": [
+      "prettier --write",
+      "eslint --ext .js,.ts"
+    ]
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "release": {
+    "branches": [
+      "saga",
+      {
+        "name": "!(saga)",
+        "prerelease": true
+      }
+    ],
+    "remoteTags": true,
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github"
+    ]
+  }
+}
