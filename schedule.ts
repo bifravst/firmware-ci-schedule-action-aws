@@ -64,7 +64,7 @@ const testEnvSDKConfig = {
 
 const s3 = new S3Client(testEnvSDKConfig)
 
-const e2e = async () => {
+const main = async () => {
 	const { Account } = await new STSClient(testEnvSDKConfig).send(
 		new GetCallerIdentityCommand({}),
 	)
@@ -388,4 +388,4 @@ rqXRfboQnoZsG4q5WTP468SQvvG5
 	}
 }
 
-void e2e()
+void main()
