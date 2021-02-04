@@ -1,3 +1,6 @@
+> **:truck: moved to https://github.com/NordicSemiconductor/cloud-aws-firmware-ci-schedule-action**  
+> :information_source: [more info](https://github.com/bifravst/bifravst/issues/56)
+
 # Firmware CI Schedule Action
 
 [![GitHub Actions](https://github.com/bifravst/firmware-ci-schedule-action-aws/workflows/Test%20and%20Release/badge.svg)](https://github.com/bifravst/firmware-ci-schedule-action-aws/actions)
