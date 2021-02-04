@@ -31,7 +31,7 @@
     "@aws-sdk/protocol-http": "3.3.0",
     "@bifravst/aws": "20.2.6",
     "@bifravst/cloudformation-helpers": "5.0.2",
-    "@bifravst/firmware-ci-runner-aws": "2.1.13",
+    "@bifravst/firmware-ci-runner-aws": "2.1.15",
     "node-fetch": "2.6.1",
     "uuid": "8.3.2"
   },
